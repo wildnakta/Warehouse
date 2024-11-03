@@ -1,5 +1,20 @@
+## 불필요한 열 제거
+### 
+```python
+df.drop(columns=['열A', '열B']) # 데이터프레임에서 '열A'와 '열B' 제거
+```
 
 
+## 결측값 제거하기
+### 
+```python
+df.dropna(subset=['열A', '열B']) # 열A와 열B 중에 결측값이 있는 행 제거
+```
+
+## 중복값 제거하기
+```python
+df.drop_duplicates( [‘열A’, ‘열B’] ) # 여러개의 행에서 ‘열A’와 ‘열B’에 중복된 값이 있을 경우 하나의 행만 남기고 제거
+```
 
 ## One-Hot Encoding(원 핫 인코딩)
 ### 방법1. lambda 함수 사용하기
