@@ -14,11 +14,12 @@ df.isnull().sum()
 
 # 데이터 통계값 확인하기
 ```python
-df.describe()
+df.describe() # 전반적인 데이터 현황 파악하기
+df['열'].value_counts() # 열의 값의 빈도 파악하기
 
 ```
 
-# 데이터 통계값 확인하기
+# 원하는 데이터 선택하기
 ```python
 df.iloc[3]     # 3번째 열 선택
 df.iloc[[3]]   # 3번째 행 선택
