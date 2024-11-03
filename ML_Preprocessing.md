@@ -1,5 +1,6 @@
 
 
+
 # One-Hot Encoding(원 핫 인코딩)
 ## 방법1. lambda 함수 사용하기
 
@@ -9,8 +10,6 @@ df['새로운 열 이름'] = df['인코딩할 열'].apply(lambda x : '바꿀 값
                                                         else 0))
 
 ```
-
-
 
 
 
@@ -30,3 +29,12 @@ label_encoder = LabelEncoder()
 df['새로운 열 이름'] = label_encoder.fit_transform(df['인코딩할 열'])
 ```
 
+
+# 범위를 범주화 하기
+## 방법1. pd.cut 클래스 사용하기
+```python
+bins = [1, 3,10] # 범주화할 범위 
+labels = [1, 2] # 어떻게 범주화 할 건지
+df[''] = pd.cut(df['범주화할 열'], bins=bins, labels=labels)
+train2
+```
