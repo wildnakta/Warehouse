@@ -6,6 +6,17 @@ df.reset_index() # e데이터프레임의 Index를 0 ~ n로 초기화함
   # 파라미터2. names = ['엶A', '열B'] : '열A'와 '열B'를 인덱스로 사용함 
 ```
 
+
+# 문자형 데이터 날짜로 변경하기
+```python
+pd.to_datetime(df['열'])                # 열을 날짜로 변경한다.
+pd.to_datetime(df['열']).dt.day_name()  # 날짜의 요일을 출력한다.
+pd.to_datetime(df['열']).dt.year        # 날짜의 연도를 출력한다
+pd.to_datetime(df['열']).dt.month       # 날짜의 월을 출력한다
+pd.to_datetime(df['열']).dt.day         # 날짜의 일을 출력한다
+```
+
+
 ## 데이터정렬
 ### 
 ```python
