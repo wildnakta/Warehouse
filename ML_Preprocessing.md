@@ -39,11 +39,13 @@ df.dropna(subset=['열A', '열B']) # 열A와 열B 중에 결측값이 있는 행
 df.drop_duplicates( [‘열A’, ‘열B’] ) # 여러개의 행에서 ‘열A’와 ‘열B’에 중복된 값이 있을 경우 하나의 행만 남기고 제거
 ```
 
-## 필요한 열만 선택하기
+## 필요한 데이터만 선택하기
 ```python
 df.select_dtypes() # 특정 형태 열만 선택
   # - 파라미터1. exclude = 특정 데이터 타입을 제외한다.(‘object’, 'float64', 'int64, 'bool')
   # - 파라미터2. include = 특정 데이터 타입만 포함한다.(‘object’, 'float64', 'int64, 'bool')
+
+df[df['열A'].str.contains('값A')] # 열A에 값A가 포함되어 있는 데이터만 선택
 ```
 
 ## One-Hot Encoding(원 핫 인코딩)
