@@ -1,3 +1,11 @@
+## 인덱스(Index) 조작
+### 
+```python
+df.reset_index() # e데이터프레임의 Index를 0 ~ n로 초기화함
+  # 파라미터1. drop = : 기존에 index 였던 데이터들이 'index'라는 이름의 열이 되는데, 이 열을 제거함 (True, False)
+  # 파라미터2. names = ['엶A', '열B'] : '열A'와 '열B'를 인덱스로 사용함 
+```
+
 ## 불필요한 열 제거
 ### 
 ```python
