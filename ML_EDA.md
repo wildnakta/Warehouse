@@ -25,7 +25,10 @@ df['열'].value_counts() # 열의 값의 빈도 파악하기
 ```python
 df.groupby('열A', '열B') # '열A'(첫 번쨰 열)별 '열B'(두 번째 열)가 오도록 배치한다.
   # 파라미터1. as_index = False, True : groupby할 열을 index로 사용할건지 아닌지 선택한다.  
-
+```
+# Pivot 사용하기
+```python
+df.pivot(index='행에 배치할 열', columns='열에 배치할 열')
 ```
 
 # 원하는 데이터 선택하기
