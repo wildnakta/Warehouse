@@ -6,6 +6,21 @@ df.reset_index() # e데이터프레임의 Index를 0 ~ n로 초기화함
   # 파라미터2. names = ['엶A', '열B'] : '열A'와 '열B'를 인덱스로 사용함 
 ```
 
+## 데이터정렬
+### 
+```python
+df.sort_values('열') # 열 값을 기준으로 오름차순으로 정렬한다
+  # 파라미터1. by = ['열A', '열B'] : '열A'와 '열B' 기준으로 데이터를 정렬한다.
+  # 파라미터2. ascending = True, False : True 면 오름차순, False면 내림차순으로 정렬
+```
+
+## 데이터 형변환
+### 
+```python
+df['열'].astype() # '열'의 값들을 float, object 등등의 자료형으로 변환한다
+```  
+
+
 ## 불필요한 열 제거
 ### 
 ```python
