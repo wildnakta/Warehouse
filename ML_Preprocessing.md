@@ -16,8 +16,8 @@ pd.to_datetime(df['열']).dt.month       # 날짜의 월을 출력한다
 pd.to_datetime(df['열']).dt.day         # 날짜의 일을 출력한다
 
 
-pd.to_datetime(df['열']).strftime # 날짜와 시간을 문자열로 출력
-pd.to_datetime(df['열']).strptime # 문자열을 날짜와 시간으로 출력
+pd.to_datetime(df['열']).strftime('%Y-%m-%d %H:%M:%S') # 날짜와 시간을 문자열로 출력
+pd.to_datetime(df['열']).strptime('%Y-%m-%d %H:%M:%S') # 문자열을 날짜와 시간으로 출력
 ```
 
 
