@@ -7,13 +7,17 @@ df.reset_index() # e데이터프레임의 Index를 0 ~ n로 초기화함
 ```
 
 
-# 문자형 데이터 날짜로 변경하기
+# 문자 ↔ 날짜로 변경하기
 ```python
 pd.to_datetime(df['열'])                # 열을 날짜로 변경한다.
 pd.to_datetime(df['열']).dt.day_name()  # 날짜의 요일을 출력한다.
 pd.to_datetime(df['열']).dt.year        # 날짜의 연도를 출력한다
 pd.to_datetime(df['열']).dt.month       # 날짜의 월을 출력한다
 pd.to_datetime(df['열']).dt.day         # 날짜의 일을 출력한다
+
+
+pd.to_datetime(df['열']).strftime # 날짜와 시간을 문자열로 출력
+pd.to_datetime(df['열']).strptime # 문자열을 날짜와 시간으로 출력
 ```
 
 
@@ -48,6 +52,9 @@ df.dropna(subset=['열A', '열B']) # 열A와 열B 중에 결측값이 있는 행
 ## 중복값 제거하기
 ```python
 df.drop_duplicates( [‘열A’, ‘열B’] ) # 여러개의 행에서 ‘열A’와 ‘열B’에 중복된 값이 있을 경우 하나의 행만 남기고 제거
+  # 파라미터1. keep = 'last', 'first' # 몇 번째 행을 남길 것인지
+  # 파라미터2. inplcae = True, False
+  # 파라미터3. ignore_index = True, False
 ```
 
 ## 필요한 데이터만 선택하기
