@@ -3,13 +3,30 @@
 ```Python
 from scipy import stats
 ```
-
-## T-test T검정
+# 두 집단의 평균 비교
+## 모수검정 : T-test T검정
 · 단일표본 t검정 : 하나의 모집단에서 추출한 표본의 평균을 모집단의 평균과 비교  
 · 독립표본 t검정 : 두 개의 모집단에서 각각 추출한 표본의 평균을 비교  
-· 대응표본 t검정 : 하나의 모집단에서 추출한 두 표본의 평균을 비교  
+· 대응표본 t검정 : 하나의 모집단에서 추출한 두 표본의 평균을 비교 
 
-
+## 비모수 검정
+### Wilcoxon Rank-Sum Test(Mann-Whitney U Test) 윌콕슨 순위합 검정
+    - 독립표본 t검정의 비모수적 검정 방법
+    - 귀무가설 : 두 표본의 분포는 동일하다
+    - 대립가설 : 두 표본의 분포는 동일하지 않다.
+```Python
+from scipy.stats import ranksums
+ranksums()
+```
+    
+### Wilcoxon Signed-Rank Test 윌콕슨 부호 순위 검정
+    - 대응표본 t검정의 비모수적 검정 방법
+    - 귀무가설 : 두 표본의 중앙값 차이는 0이다.
+    - 대립가설 : 두 표본의 중앙값 차이는 0이 아니다.
+```Python
+from scipy.stats import wilcoxon
+wilcoxon(df['열'] - 모집단의 평균)
+```
 ## 정규성 검정 : 데이터가 정규분포를 따르는지 검정하는 통계적인 방법
     
 ### Anderson-Darling 검정
