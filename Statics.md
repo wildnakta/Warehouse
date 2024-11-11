@@ -19,6 +19,10 @@ from scipy import stats
     ttest_ind(df1, df2)
    ```
 · 대응표본 t검정 : 하나의 모집단에서 추출한 두 표본의 평균을 비교 
+   ```Python
+    from scipy.stats import ttest_rel
+    ttest_rel(df_before, df_after)
+   ```
 
 ## 비모수 검정
 ### Wilcoxon Rank-Sum Test(Mann-Whitney U Test) 윌콕슨 순위합 검정
