@@ -51,3 +51,24 @@ anderson(배열)  # Anderson-Darling 검정
 kstest(df)    # K-S검정(Kolmogorov-Smirnov 콜모고로프-스미르노프 검정)
 shapiro(df)   # 샤피로-윌크 검정
 ```
+
+## 등분산 검정
+    - 귀무가설(H0) : 분산이 동일하다
+    - 대립가설(H1) : 분산이 동일하지 않다.
+- 대부분의 통계 절차에서는 표본들이 서로 다른 평균을 갖는 모집단에서 추출되었더라도 분산이 동일하다고 가정한다.
+- 등분산 검정은 그 자체로는 많이 사용되지는 않고, 분산분석이나 t검정을 하기 전에 조건 분석용으로 사용한다.
+
+
+|종류|비교 가능한 그룹 수|정규성 가정|특징|
+|------|---|---|------|
+|F Test|두 그룹|필요||
+|Levene's Test|세 그룹 이상|불필요||
+|Brown-forsythe Test |-|-|편차의 차이를 평균의 차이가 아닌 중앙값의 차이로 정의|
+|Barlett Test|세 그룹 이상|필요||
+
+
+```Python
+from scipy.stats import bartlett
+from scipy.stats import fligner
+from scipy.stats import levene
+```
