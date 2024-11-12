@@ -4,6 +4,12 @@ Robust 하다 : 이상값이 있더라도 결광에 큰 영향을 미치지 않�
 ```Python
 from scipy import stats
 ```
+
+```Python
+from scipy.stats import zscore
+
+```
+
 # 두 집단의 평균 비교
 ## 모수검정 : T-test T검정
     - 귀무가설(H0) : 두 집단의 평균이 동일하다
