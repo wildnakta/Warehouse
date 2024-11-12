@@ -5,9 +5,11 @@ Robust 하다 : 이상값이 있더라도 결광에 큰 영향을 미치지 않�
 from scipy import stats
 ```
 
+## 표준화
+- Z-Score의 의미 : 단위와 상관없이 값이 평균에서 얼마나 떨어져 있는가를 나타냄
 ```Python
 from scipy.stats import zscore
-
+zscore(배열 or 데이터프레임)
 ```
 
 # 두 집단의 평균 비교
