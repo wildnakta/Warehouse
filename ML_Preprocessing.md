@@ -92,6 +92,16 @@ df['새로운 열'] = label_encoder.fit_transform(df['인코딩할 열'])
 ```
 
 
+## 데이터셋 나누기
+
+``` python
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(feature, target)
+
+```
+
+
+
 ## 범위를 범주화 하기
 ### 방법1. pd.cut 클래스 사용하기
 ```python
