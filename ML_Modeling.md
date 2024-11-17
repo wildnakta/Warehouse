@@ -6,6 +6,24 @@
 |빈도수    | 포아송 회귀분석, 음이항 회귀분석|
 |순서형변수 | 순서형 로지스틱 회귀분석, 순서형 프로빗분석 |
 
+```Python
+import statsmodels.api as sm
+model = sm.GLM(y_train, x_train, family=sm.families.파라미터1() ).fit()
+'''
+파라미터1. family =
+- family :
+- Binominal : 클래스가 2개인 문제, Logit 모델과 동일
+- Gammma :
+- Gaussian :
+- InverseGaussian :
+- NegativeBinomial :
+- Poission :
+- Tweedie : 
+'''
+model.summary()
+```
+
+
 ## 회귀분석
 ### 다중회귀
 ### 방법1. statsmodels 라이브러리를 이용하는 방법
