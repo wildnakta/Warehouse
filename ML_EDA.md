@@ -18,7 +18,11 @@ df.isnull().sum()
 ```python
 df.describe() # 전반적인 데이터 현황 파악하기
 df['열'].value_counts() # 열의 값의 빈도 파악하기
+```
 
+# Crosstable 사용하기
+```python
+pd.crosstab(df['행으로 배치할 열'],df['열에 배치할 열']) # 값은 빈도수로 나옴
 ```
 
 # Groupby 사용하기
