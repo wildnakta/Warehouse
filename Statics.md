@@ -107,7 +107,10 @@ from scipy.stats import levene
 
 ## 카이제곱검정(교차분석) : 두 변수가 서로 독립사건인지 종속관게인지 판단한다.
 ![image](https://github.com/user-attachments/assets/0aee1935-1d4b-4b51-94ff-ffb37ddcb696)
-
+```Python
+from scipy.stats import chi2_contingency
+chi2, p, dof, expected = chi2_contingency(df)
+```
 
     - 독립변수 / 종속변수 : 범주형 / 범주형
     - 귀무가설(H0) : 두 범주형 변수가 서로 독립이다. 
