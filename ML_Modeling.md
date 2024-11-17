@@ -29,7 +29,18 @@ print(model_train.summary())
 
 ```
 ※ 참고자료
-  - 오즈(Odds) : 성공확률이 실패확률에 비해 몇 배 높은가를 의미
-    ![image](https://github.com/user-attachments/assets/92e83ba7-496b-495a-9c1d-4c398929f034)
+  - 오즈(Odds) : P / (1 - P), 발생할 확률이 발생하지 않을 확률에 비해 몇 배 높은가를 의미
+  - 오즈비(Odds Rate) :
+    예) 약의 효과를 알아보기 위해 실제 약(Test)와 위약(Placebo)의 효과를 비교한다고 할 때,
+    
+    |     | Favorable | Unfavorable | Total |
+    |-----|-----------|-------------|-------|
+    |Test| 16 | 48 | 64 |
+    |Placebo| 40 | 20 | 60 |
+
+    Odds_Test    = 0.250 / ( 1 - 0.250 ) = 0.333  
+    Odds_Placebo = 0.667 / ( 1 - 0.667 ) = 2.000  
+    Odds Rate = Odds_Test / Odds_Placebo = 0.167  
+    따라서 약의 효과는 위약의 효과의 0.167배 이다.
 
   - 로짓변환 : 오즈에 로그를 취한 함수. 입력 값의 범위가 [0,1] 일 때 출력 값의 범위를 (−∞,+∞)로 조정한다.
