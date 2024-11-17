@@ -102,3 +102,16 @@ from scipy.stats import bartlett
 from scipy.stats import fligner
 from scipy.stats import levene
 ```
+
+
+
+## 카이제곱검정(교차분석) : 두 변수가 서로 독립사건인지 종속관게인지 판단한다.
+![image](https://github.com/user-attachments/assets/0aee1935-1d4b-4b51-94ff-ffb37ddcb696)
+
+
+    - 독립변수 / 종속변수 : 범주형 / 범주형
+    - 귀무가설(H0) : 두 범주형 변수가 서로 독립이다. 
+    - 대립가설(H1) : 두 범주형 변수가 서로 독립이 아니다.
+    - 단측검정
+    - 카이제곱통계량이 커질수록 좋지 않다.(=실제와 기대도수 차이가 크다)
+
