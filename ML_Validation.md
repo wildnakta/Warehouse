@@ -72,3 +72,8 @@ f1_score(y_test, y_pred, average= ,)
   ![image](https://github.com/user-attachments/assets/0174bdf9-b5c8-43e3-826a-81a89244da72)
 
 ### 2.2 ROC-AUC Score
+- AUC는 0.5이상 1이하의 값을 갖는다. 0.5이면 분류능력이 전혀 없는 것을 의미, 1에 가까울수록 좋음
+- y축은 TPR(True Positive Rate, Sensitivity, 민감도) 
+- x축은 FPR(False Positive Rate, 1 - Specificity)
+- Sensitivity : Positive를 Positive라고 옳게 판단한 비율
+- Specificity : Negative를 Negative라고 옳게 판단한 비율
