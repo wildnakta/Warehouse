@@ -36,7 +36,13 @@ zscore(배열 or 데이터프레임)
 · 대응표본 t검정 : 하나의 모집단에서 추출한 두 표본의 평균을 비교 
    ```Python
     from scipy.stats import ttest_rel
-    ttest_rel(df_before, df_after)
+    ttest_rel(df_before, df_after, alternative='greater')
+
+    '''
+    파라미터1. alternative =
+    - greater : 단측검정, before > after가 대립가설이 된다.
+    - less : 단측검정, before < after가 대립가설이 된다.
+    '''
    ```
 
 ## 비모수 검정
@@ -60,7 +66,7 @@ wilcoxon(df['열'] - 모집단의 평균)
 ## 정규성 검정 : 데이터가 정규분포를 따르는지 검정하는 통계적인 방법
     
 ### Anderson-Darling 검정
-    · 특징 : 데이터수가 상대적으로 많을 때 사용
+    · 특징 : 데이터수가 상대적으로 많을 때(5,000개 이상) 사용
     · 결과해석 : 
      - statistic : 통계값
      - critical_values : 순서대로 유의확률 15%, 10%, 5%, 2.5%, 1% 일 떄의 P-Value
@@ -105,11 +111,49 @@ from scipy.stats import levene
 
 
 
-## 카이제곱검정(교차분석) : 두 변수가 서로 독립사건인지 종속관게인지 판단한다.
+## 카이제곱검정(교차분석)
 ![image](https://github.com/user-attachments/assets/0aee1935-1d4b-4b51-94ff-ffb37ddcb696)
+
+### 카이제곱검정의 종류
+1. 독립성 검정 (Test of Independence)
+   - 두 범주형 변수 간의 독립성 여부 확인
+   - 예) 성별(남/여)와 취미(운동/독서/게임) 간의 관계가 있는지 검정
+2. 동질성 검정 (Test of Homogeneity)
+    - 동일한 범주형 변수에 대해 여러 모집단의 분포를 비교.
+    - 예) 세 도시(A, B, C) 주민들이 선호하는 교통수단(버스, 지하철, 택시)의 분포가 같은가?
+3. 적합도 검정 (Goodness of Fit Test)
+   - 한 집단의 관찰값이 특정 이론적 분포(또는 기대값)에 얼마나 잘 부합하는지 확인.
+   - 예) 주사위를 60번 굴렸을 때, 각 면이 나온 횟수가 균일한 분포를 따르는가?
+
+|특성| chi2_contingency | chisquare |
+|----|------------------|-----------|
+| 검정 유형 | 독립성 검정 / 동질성 검정	| 적합도 검정 |
+| 입력 데이터 | 교차표 (2D 빈도 배열)	| 관찰값과 기대값 (1D 배열)|
+| 결과	|Chi2 통계량, p-값, 자유도, 기대 빈도	|Chi2 통계량, p-값|
+| 기대값 자동 계산 | 가능 | 기대값 없으면 균일 분포로 간주|
+| 적용 범주	|두 범주형 변수의 관계 분석	|단일 샘플의 분포 적합성 확인|
+
 ```Python
 from scipy.stats import chi2_contingency
-chi2, p, dof, expected = chi2_contingency(df)
+
+# 2x2 교차표
+obs = [[10, 20],
+       [30, 40]]
+
+chi2, p, dof, expected = chi2_contingency(obs)
+print(f"Chi2: {chi2}, p-value: {p}, DoF: {dof}, Expected Frequencies: {expected}")
+
+```
+
+```Python
+from scipy.stats import chisquare
+
+observed = [10, 20, 30] # 관찰값
+expected = [15, 15, 30] # 기대값
+
+chi2, p = chisquare(f_obs=observed, f_exp=expected)
+print(f"Chi2: {chi2}, p-value: {p}")
+
 ```
 
     - 독립변수 / 종속변수 : 범주형 / 범주형
