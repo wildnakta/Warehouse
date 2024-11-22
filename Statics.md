@@ -19,6 +19,11 @@ from scipy.stats import zscore
 zscore(배열 or 데이터프레임)
 ```
 
+## 표준편차
+```Python
+df.std()
+```
+
 # 두 집단의 평균 비교
 ## 모수검정 : T-test T검정
     - 귀무가설(H0) : 두 집단의 평균이 동일하다
