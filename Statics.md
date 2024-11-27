@@ -34,14 +34,16 @@ np.log(0)   # -inf 출력
 np.log1p(0) # 0 출력
 ```
 
-# 두 집단의 평균 비교
+# 집단간 평균 비교
+![image](https://github.com/user-attachments/assets/a177b881-5ba5-4f06-880e-1f113312a182)
+
 ## 모수검정 : T-test T검정
     - 귀무가설(H0) : 두 집단의 평균이 동일하다
     - 대립가설(H1) : 두 집단의 평균이 동일하지 않다.
 · 단일표본 t검정 : 하나의 모집단에서 추출한 표본의 평균을 모집단의 평균과 비교
    ```Python
     from scipy.stats import ttest_1samp
-    ttest_1smap(df, 모평균)
+    ttest_1samp(df, 모평균)
    ```
 · 독립표본 t검정 : 두 개의 모집단에서 각각 추출한 표본의 평균을 비교
    ```Python
@@ -176,4 +178,26 @@ print(f"Chi2: {chi2}, p-value: {p}")
     - 대립가설(H1) : 두 범주형 변수가 서로 독립이 아니다.
     - 단측검정
     - 카이제곱통계량이 커질수록 좋지 않다.(=실제와 기대도수 차이가 크다)
+
+## 사후검정
+
+민감도 순위 : Duncan > Tukey > Bonferroni > Scheffe
+왼쪽으로 갈수록 집단을 분리시키려는 성격이 강하다.
+오른쪽으로 갈수록 집단을 엄격하고 소극적으로 분리시킨다.
+
+|종류        |로직 |등분산 가정|특징|
+|------------|-----|---|------|
+|Duncan      |     |O|-|
+|Tukey       |     |O|집단의 수가 동일한 경우에 사용 가능 |
+|Bonferrnoi  |t검정|O|각 집단의 수가 동일하지 않아도 사용 가능|
+|Scheffe     |F분포|O|시회과학에서 가장 많이 사용하는 기법|
+|Dunnett T3  |     |X||
+|Games-Howell|     |X||
+
+
+```Python
+from scipy.stats import bartlett
+from scipy.stats import fligner
+from scipy.stats import levene
+```
 
