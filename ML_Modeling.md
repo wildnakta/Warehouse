@@ -35,8 +35,10 @@ import statsmodels.api as sm
 X = sm.add_constant(독립변수_배열)  # 상수항 추가
 model = sm.OLS(종속변수_배열, 독립변수_배열).fit()
 
-# 모델 p-value 출력
-model.pvalues()
+
+model.pvalues[[독립변수1, 독립변수2]] # 독립변수1, 독립변수2와 종속변수의 관계성에 대한 p-value 출력
+model.params    # 계수 출력
+model.predict([ 상수, 계수1, 계수2...  ]) # 상수, 게수1, 계수2... 를 대입했을 때 출력값을 구한다.
 
 # 모델 요약 출력
 print(model.summary())
