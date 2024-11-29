@@ -24,6 +24,27 @@ zscore(배열 or 데이터프레임)
 df.std()
 ```
 
+## 신뢰구간
+```Python
+# 신뢰수준, 자유도
+n = len(df['열'])
+confidence_level = 0.95 # 신뢰수준
+ddof = n - 1 # 자유도
+
+
+# t 분포의 양쪽 꼬리에서의 t값
+# 양측검정에서의 유의수준 = (1 + 신뢰수준) / 2
+t_value = round(t.ppf((1 + confidence_level) / 2, ddof),4) # t값 = t.ppdf(유의수준, 자유도)
+print(f't통계량 : {t_value}')
+
+# 신뢰구간 계산
+upper = mean + t_value*std / np.sqrt(n)
+lower = mean - t_value*std / np.sqrt(n)
+
+print(f'신뢰구간:{lower, upper}')
+```
+
+
 ## 로그변환
     ※ 로그변환을 하는 이유
         - 뭉쳐 데이터는 퍼지게 만들고, 퍼져 있는 데이터는 모이게 만들기 위해 사용한다.
