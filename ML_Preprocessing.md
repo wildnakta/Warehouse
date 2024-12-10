@@ -6,6 +6,11 @@ df.reset_index() # e데이터프레임의 Index를 0 ~ n로 초기화함
   # 파라미터2. names = ['엶A', '열B'] : '열A'와 '열B'를 인덱스로 사용함 
 ```
 
+## Column명 변경
+```python
+df.rename( columns = { '기존컬럼명1' : '새로운컬럼명1', '기존컬럼명2' : '새로운컬럼명2' }, inplace = True ) 
+```
+
 
 # 문자 ↔ 날짜로 변경하기
 ```python
