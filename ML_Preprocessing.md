@@ -88,6 +88,11 @@ df['새로운 열'] = df['인코딩할 열'].apply(lambda x : '바꿀 값1' if '
                                                     else( '바꿀 값2' if '바꾸고 싶은 값2' in x
                                                         else 0))
 ```
+### 방법2. loc 함수 사용하기
+``` python
+# '열'A에 '값A'라는 값이 있을 경우 '열B'에 '값B'를 저장한다.
+df.loc[df['열A'] == '값A', '열B'] = '값B'
+```
 
 ### 방법2. sklearn.LabelEncdoing 모듈 사용하기
 ```python
@@ -112,7 +117,7 @@ x_train, x_test, y_train, y_test = train_test_split(feature, target)
 ```python
 bins = [1, 3,10] # 범주화할 범위 
 labels = [1, 2] # 어떻게 범주화 할 건지
-# 0이상 3미만의 값은 1로, 3이상 10 미만의 값은 2로 범주화
+# 0초과 3이하의 값은 1로, 3이상 10 미만의 값은 2로 범주화
 df['새로운 열'] = pd.cut(df['범주화할 열'], bins=bins, labels=labels)
 train2
 ```
