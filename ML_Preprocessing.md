@@ -12,7 +12,7 @@ df.rename( columns = { '기존컬럼명1' : '새로운컬럼명1', '기존컬럼
 ```
 
 
-# 문자 ↔ 날짜로 변경하기
+## 문자 ↔ 날짜로 변경하기
 ```python
 pd.to_datetime(df['열'])                # 열을 날짜로 변경한다.
 pd.to_datetime(df['열']).dt.day_name()  # 날짜의 요일을 출력한다.
@@ -48,10 +48,11 @@ df.drop(columns=['열A', '열B']) # 데이터프레임에서 '열A'와 '열B' �
 ```
 
 
-## 결측값 제거하기
+## 결측값 처리
 ### 
 ```python
-df.dropna(subset=['열A', '열B']) # 열A와 열B 중에 결측값이 있는 행 제거
+df.dropna(subset=['열A', '열B']) # 결측값 제거, 열A와 열B 중에 결측값이 있는 행 제거
+pd.notna(df['열']) # 결측값이 있는지 확인하여 없으면 True, 있으면 False로 반환
 ```
 
 ## 중복값 제거하기
@@ -69,6 +70,14 @@ df.select_dtypes() # 특정 형태 열만 선택
   # - 파라미터2. include = 특정 데이터 타입만 포함한다.(‘object’, 'float64', 'int64, 'bool')
 
 df[df['열A'].str.contains('값A')] # 열A에 값A가 포함되어 있는 데이터만 선택
+```
+
+## 데이터테이블 병합(join)
+```python
+pd.merge(left = df1,
+        right = df2,
+        how = inner, # 어떤 방법으로 join 할 건지, [ inner, left, right, outer ]
+        on = '데이터프레임을 join하는데 사용할 컬럼명')
 ```
 
 ## One-Hot Encoding(원 핫 인코딩)
@@ -93,6 +102,7 @@ df['새로운 열'] = df['인코딩할 열'].apply(lambda x : '바꿀 값1' if '
 # '열'A에 '값A'라는 값이 있을 경우 '열B'에 '값B'를 저장한다.
 df.loc[df['열A'] == '값A', '열B'] = '값B'
 ```
+
 
 ### 방법2. sklearn.LabelEncdoing 모듈 사용하기
 ```python
