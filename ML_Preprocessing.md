@@ -1,3 +1,10 @@
+## 추가할 내용
+```python
+df.melt
+df.stack
+df.unstack
+```
+
 ## 인덱스(Index) 조작
 ### 
 ```python
