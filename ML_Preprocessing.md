@@ -4,7 +4,7 @@ df.melt
 df.stack
 df.unstack
 pd.pivot()
-pd.pivot_talbe()
+pd.pivot_table()
 ```
 
 ## 인덱스(Index) 조작
