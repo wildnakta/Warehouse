@@ -3,6 +3,8 @@
 df.melt
 df.stack
 df.unstack
+pd.pivot()
+pd.pivot_talbe()
 ```
 
 ## 인덱스(Index) 조작
