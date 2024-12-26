@@ -35,15 +35,15 @@ arr3 : [ 4  7 10 13  3]
 
 
 ### Accuracy, Recalll(재현율), Precision(정확도)
-```python
-# Precision(정확도) = TP / ( TP + FP ), True로 분류한 것 중에 실제로 True인 비율
-# Recall(재현율) = TP / ( TP + FN ), 실제로 True인 것 중에 True로 분류한 비율
+```
+- Precision(정확도) = TP / ( TP + FP ), True로 분류한 것 중에 실제로 True인 비율
+- Recall(재현율) = TP / ( TP + FN ), 실제로 True인 것 중에 True로 분류한 비율
 
-# Sensitivity(민감도), TPR = TP / ( TP + FN ), 실제로 True인 것 중에 True로 분류한 비율
-# Specificity(특이도), TNR = TN / ( TN + FP ), 실제로 False 인 것 중에 False로 분류한 비율
-# FPR = 1 - 특이도, Negative를 Positive로 잘못 분류한 비율
+- Sensitivity(민감도), TPR = TP / ( TP + FN ), 실제로 True인 것 중에 True로 분류한 비율
+- Specificity(특이도), TNR = TN / ( TN + FP ), 실제로 False 인 것 중에 False로 분류한 비율
+- FPR = 1 - 특이도, Negative를 Positive로 잘못 분류한 비율
 
-# 재현율 = 민감도
+- 재현율 = 민감도
 
 ```
 
